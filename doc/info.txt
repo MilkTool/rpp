@@ -1,0 +1,2 @@
+git clone -b gh-pages https://github.com/goto40/rpp.git --single-branch doc/html/
+
