@@ -1,2 +1,4 @@
 git clone -b gh-pages https://github.com/goto40/rpp.git --single-branch doc/html/
 
+git checkout --orphan gh-pages
+git push origin gh-pages
