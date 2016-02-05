@@ -1,6 +1,16 @@
 ﻿# C++ Reflection Generator
 The reflection generator is used to generate C++ code to provide meta information about C++ elements, such as enums or structs.
 
+The reflection code allows
+ * for enums:
+   * converting enum values to/from strings
+   * iterating over all possible enum values
+ * for structs
+   * iterating over all attributes of a struct (visitor-pattern-like)
+
+[See Doxygen docu for a simple demo](http://goto40.github.io/rpp/)
+
+
 ## Code & Design
 [See Doxygen docu](http://goto40.github.io/rpp/)
 
