@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>C++ Reflection Generator: SDD Code Generator</title>
+<title>C++ Reflection Generator: Software Design Descriptions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('_s_d_d__code__generator.html','');});
+$(document).ready(function(){initNavTree('ssd.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -102,44 +102,19 @@ $(document).ready(function(){initNavTree('_s_d_d__code__generator.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">SDD Code Generator </div>  </div>
+<div class="title">Software Design Descriptions </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><ul>
-<li>All Code Generator aspects are implemented in namespaces <a class="el" href="namespacedata.html">data</a>, <a class="el" href="namespaceparser.html">parser</a>, and <a class="el" href="namespacegenerator.html">generator</a> and <a class="el" href="main_8cpp.html">main.cpp</a>.</li>
-<li>The Code Generator <b>behavior</b> is described as follow (compare <a class="el" href="main_8cpp.html">main.cpp</a>)<ul>
-<li><b>Parse</b> the code</li>
-<li>Store the parsed data in the <b>Data Model</b></li>
-<li><b>Generate code</b> from the data model.</li>
-</ul>
-</li>
-</ul>
-<h1><a class="anchor" id="section_data_model"></a>
-The Data Model</h1>
-<p>The <a class="el" href="namespacedata.html">data</a> is described by</p><ul>
-<li>An output file (with additional input filter specification): <a class="el" href="structdata_1_1file__model.html">data::file_model</a></li>
-<li>An enum description (for each enum): <a class="el" href="structdata_1_1enum__model.html">data::enum_model</a></li>
-<li>An struct description (for each struct/class): <a class="el" href="structdata_1_1struct__model.html">data::struct_model</a></li>
-</ul>
-<h1><a class="anchor" id="section_parser"></a>
-The Code Parser</h1>
-<p>The code <a class="el" href="namespaceparser.html">parser</a> task is delegated to the clang tooling library. We also employ the command line argument parser of this framework.</p><ul>
-<li><a class="el" href="common__parser_8h.html">common_parser.h</a> parses the command line arguments and prepares the clang modules for further code parsing.</li>
-<li><a class="el" href="enum__parser_8h.html">enum_parser.h</a> contains classes to parse enums, <a class="el" href="enum__parser_8cpp.html">enum_parser.cpp</a> contains additioal helper classes.</li>
-<li><a class="el" href="struct__parser_8h.html">struct_parser.h</a> contains classes to parse structs, <a class="el" href="struct__parser_8cpp.html">struct_parser.cpp</a> contains additioal helper classes.</li>
-</ul>
-<h1><a class="anchor" id="section_generator"></a>
-The Code Generator</h1>
-<p>The idea is that this part (the <a class="el" href="namespacegenerator.html">generator</a>) of the software is easily maintained, extended or exchanged. Thus, the model information can be used for any other code generation task.</p><ul>
-<li><a class="el" href="enum__codegenerator_8h.html">enum_codegenerator.h</a> contains functions to generate refelction code from the data model. <a class="el" href="enum__codegenerator_8cpp.html">enum_codegenerator.cpp</a> contains additional helper functions. </li>
+<div class="textblock"><p>The design of the presenetd software is two fold: the design of the code generator and the design of the generated code.</p><ul>
+<li>sdd_Code_Generator</li>
+<li><a class="el" href="sdd__generated__code.html">SDD Generated Code</a> </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="_s_d_d.html">Software Design Descriptions</a></li>
-    <li class="footer">Generated on Thu Feb 4 2016 22:23:11 for C++ Reflection Generator by
+    <li class="footer">Generated on Thu Feb 11 2016 21:02:19 for C++ Reflection Generator by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>
