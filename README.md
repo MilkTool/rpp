@@ -1,4 +1,4 @@
-﻿# C++ Reflection Generator
+# C++ Reflection Generator
 The reflection generator is used to generate C++ code to provide meta information about C++ elements, such as enums or structs.
 
 The reflection code allows
@@ -8,19 +8,12 @@ The reflection code allows
  * for structs
    * iterating over all attributes of a struct (visitor-pattern-like)
 
-[See Doxygen docu for a simple demo](http://goto40.github.io/rpp/)
-
-
-## Code & Design
-[See Doxygen docu](http://goto40.github.io/rpp/)
+[See Doxygen docu for more information](http://goto40.github.io/rpp/)
 
 ## Project state
 alpha
  * buildscript depends on clang/llvm folder (to be specified)
  * no test scripts
-
-## Usage
-TBD
 
 ## Build
 * Call ./build.sh to build the software.
