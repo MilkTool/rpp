@@ -3,11 +3,6 @@ var NAVTREE =
   [ "C++ Reflection Generator", "index.html", [
     [ "Introduction", "index.html", null ],
     [ "Software Design Descriptions", "ssd.html", "ssd" ],
-    [ "SDD Code Generator", "ssd__code__generator.html", [
-      [ "The Data Model", "ssd__code__generator.html#section_data_model", null ],
-      [ "The Code Parser", "ssd__code__generator.html#section_parser", null ],
-      [ "The Code Generator", "ssd__code__generator.html#section_generator", null ]
-    ] ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [

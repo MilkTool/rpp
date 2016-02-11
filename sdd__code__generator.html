@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>C++ Reflection Generator: Member List</title>
+<title>C++ Reflection Generator: SDD Code Generator</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -49,9 +49,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -71,14 +71,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
-    </ul>
-  </div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -91,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('structreflection_1_1_enum_3_01mytest_1_1oknotok_01_4.html','');});
+$(document).ready(function(){initNavTree('sdd__code__generator.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -110,22 +102,44 @@ $(document).ready(function(){initNavTree('structreflection_1_1_enum_3_01mytest_1
 
 <div class="header">
   <div class="headertitle">
-<div class="title">reflection::Enum&lt; mytest::oknotok &gt; Member List</div>  </div>
+<div class="title">SDD Code Generator </div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>This is the complete list of members for <a class="el" href="structreflection_1_1_enum_3_01mytest_1_1oknotok_01_4.html">reflection::Enum&lt; mytest::oknotok &gt;</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="structreflection_1_1_enum_3_01mytest_1_1oknotok_01_4.html#a75a4903eb2b22bcf6c8ec34968d18dff">enum_type</a> typedef</td><td class="entry"><a class="el" href="structreflection_1_1_enum_3_01mytest_1_1oknotok_01_4.html">reflection::Enum&lt; mytest::oknotok &gt;</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="structreflection_1_1_enum_3_01mytest_1_1oknotok_01_4.html#a4ae65a8ee0a318b0e5daac7572737f44">for_each_possible_value</a>(std::function&lt; void(mytest::oknotok)&gt; f)</td><td class="entry"><a class="el" href="structreflection_1_1_enum_3_01mytest_1_1oknotok_01_4.html">reflection::Enum&lt; mytest::oknotok &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structreflection_1_1_enum_3_01mytest_1_1oknotok_01_4.html#a7d4dedb1b03d4fd3d775921ce3f1023c">parse</a>(const char *txt)</td><td class="entry"><a class="el" href="structreflection_1_1_enum_3_01mytest_1_1oknotok_01_4.html">reflection::Enum&lt; mytest::oknotok &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="structreflection_1_1_enum_3_01mytest_1_1oknotok_01_4.html#a1cdfc81be17750a296e6356ca3474a5a">str</a>(mytest::oknotok v)</td><td class="entry"><a class="el" href="structreflection_1_1_enum_3_01mytest_1_1oknotok_01_4.html">reflection::Enum&lt; mytest::oknotok &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
-</table></div><!-- contents -->
+<div class="textblock"><ul>
+<li>All Code Generator aspects are implemented in namespaces <a class="el" href="namespacedata.html">data</a>, <a class="el" href="namespaceparser.html">parser</a>, and <a class="el" href="namespacegenerator.html">generator</a> and <a class="el" href="main_8cpp.html">main.cpp</a>.</li>
+<li>The Code Generator <b>behavior</b> is described as follow (compare <a class="el" href="main_8cpp.html">main.cpp</a>)<ul>
+<li><b>Parse</b> the code</li>
+<li>Store the parsed data in the <b>Data Model</b></li>
+<li><b>Generate code</b> from the data model.</li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="section_data_model"></a>
+The Data Model</h1>
+<p>The <a class="el" href="namespacedata.html">data</a> is described by</p><ul>
+<li>An output file (with additional input filter specification): <a class="el" href="structdata_1_1file__model.html">data::file_model</a></li>
+<li>An enum description (for each enum): <a class="el" href="structdata_1_1enum__model.html">data::enum_model</a></li>
+<li>An struct description (for each struct/class): <a class="el" href="structdata_1_1struct__model.html">data::struct_model</a></li>
+</ul>
+<h1><a class="anchor" id="section_parser"></a>
+The Code Parser</h1>
+<p>The code <a class="el" href="namespaceparser.html">parser</a> task is delegated to the clang tooling library. We also employ the command line argument parser of this framework.</p><ul>
+<li><a class="el" href="common__parser_8h.html">common_parser.h</a> parses the command line arguments and prepares the clang modules for further code parsing.</li>
+<li><a class="el" href="enum__parser_8h.html">enum_parser.h</a> contains classes to parse enums, <a class="el" href="enum__parser_8cpp.html">enum_parser.cpp</a> contains additioal helper classes.</li>
+<li><a class="el" href="struct__parser_8h.html">struct_parser.h</a> contains classes to parse structs, <a class="el" href="struct__parser_8cpp.html">struct_parser.cpp</a> contains additioal helper classes.</li>
+</ul>
+<h1><a class="anchor" id="section_generator"></a>
+The Code Generator</h1>
+<p>The idea is that this part (the <a class="el" href="namespacegenerator.html">generator</a>) of the software is easily maintained, extended or exchanged. Thus, the model information can be used for any other code generation task.</p><ul>
+<li><a class="el" href="enum__codegenerator_8h.html">enum_codegenerator.h</a> contains functions to generate refelction code from the data model. <a class="el" href="enum__codegenerator_8cpp.html">enum_codegenerator.cpp</a> contains additional helper functions. </li>
+</ul>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Feb 11 2016 21:05:49 for C++ Reflection Generator by
+    <li class="navelem"><a class="el" href="ssd.html">Software Design Descriptions</a></li>
+    <li class="footer">Generated on Thu Feb 11 2016 21:05:46 for C++ Reflection Generator by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>
