@@ -1,6 +1,6 @@
 #cmake -G"Eclipse CDT4 - Unix Makefiles" 
 #cmake -G"Unix Makefiles" && make && ./clang_reflection_generator example/testfile.h -- -x c++ -std=c++11
-# clang -Xclang -ast-dump -fsyntax-only -x c++ -std=c++11 example/testfile.h
+#clang -Xclang -ast-dump -fsyntax-only -x c++ -std=c++11 example/testfile.h
 
 
 ######################
