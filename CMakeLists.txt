@@ -1,18 +1,13 @@
 cmake_minimum_required(VERSION 2.8.4)
 set(APPNAME cpp_reflection_generator)
 project(${APPNAME})
-
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 include(FindCurses)
 
-#set(LIBTOOLING_MINIMUM_VERSION "3.4")
-#find_package(LibTooling ${LIBTOOLING_MINIMUM_VERSION} REQUIRED)
-##find_package(LLVM REQUIRED)
-
-set(LLVM_PATH /usr/lib/llvm-3.5)
-link_directories(${LLVM_PATH}/lib)
-include_directories(${LLVM_PATH}/include)
+find_package(LLVM REQUIRED CONFIG)
+message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
+message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
 
 add_definitions(
 -D__STDC_LIMIT_MACROS
@@ -21,15 +16,10 @@ add_definitions(
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11") # -fno-rtti
 
-set(SOURCE_FILES src/main.cpp
-src/generator/enum_codegenerator.cpp
-src/generator/struct_codegenerator.cpp
-src/parser/common_parser.cpp
-src/parser/enum_parser.cpp
-src/parser/struct_parser.cpp
-)
+file(GLOB_RECURSE SOURCE_FILES src/*.cpp)
 
-include_directories(src)
+link_directories(${LINK_DIRECTORIES} ${LLVM_LIBRARY_DIR})
+include_directories(${INCLUDE_DIRECTORIES} ${LLVM_INCLUDE_DIRS} src)
 
 add_executable(${APPNAME} ${SOURCE_FILES})
 
@@ -58,7 +48,6 @@ target_link_libraries(${APPNAME}
   LLVMScalarOpts
   LLVMInstCombine
   LLVMTransformUtils
-  LLVMipa
   LLVMAnalysis
   LLVMTarget
   LLVMOption # Support
