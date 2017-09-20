@@ -1,6 +1,10 @@
 #include <cstdint>
+#include <stdarg.h>
 
 namespace global {
+
+enum : uint32_t  {pi=1,ba=2};
+
 namespace plain {
 enum plainA { a1=0xF0,a2,a3 };
 enum class plainB { b1,b2,b3 };

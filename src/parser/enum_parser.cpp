@@ -166,9 +166,9 @@ private:
  */
 class EnumAction : public clang::ASTFrontendAction {
 public:
-  virtual clang::ASTConsumer* CreateASTConsumer(clang::CompilerInstance &Compiler, llvm::StringRef InFile) {
+  virtual std::unique_ptr<ASTConsumer> CreateASTConsumer(clang::CompilerInstance &Compiler, llvm::StringRef InFile) {
 	  //cout << "CreateASTConsumer" << endl;
-	  return new EnumConsumer(&Compiler.getASTContext());
+	  return std::unique_ptr<ASTConsumer>(new EnumConsumer(&Compiler.getASTContext()));
   }
 };
 } // anon. namespace

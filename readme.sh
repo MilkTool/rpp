@@ -4,7 +4,7 @@
 
 
 ######################
-#./clang_reflection_generator example/testfile.h -- -x c++ -std=c++11 |pygmentize -l cpp
+#./cpp_reflection_generator example/testfile.h -- -x c++ -std=c++11 |pygmentize -l cpp
 
 # Note the two dashes after we specify the source file. The additional options for the compiler are passed after the dashes rather
 # than loading them from a compilation database - there just aren’t any options needed right now.
@@ -16,4 +16,4 @@
 
 ######################
 # I can iterate over the whole database?
-./clang_reflection_generator -useDBFiles . |pygmentize -l cpp
+./cpp_reflection_generator -useDBFiles . |pygmentize -l cpp
